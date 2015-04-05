@@ -1,0 +1,35 @@
+▼OS log files
+Messages： /var/log/messages
+dmesg： /var/log/dmesg
+boot.log： /var/log/boot.log
+ 
+▼OS information
+# uname -a
+# cat /etc/redhat-release
+ 
+▼Survey.cd /opt/hp/hpdiags
+ /opt/hp/hpdiags/hpdiag -v 5 -o "file name".xml
+ 
+※Output file of default
+ /opt/hp/hpdiags/surveyYYYY-MM-DD-HH-MM-SS.xml
+ 
+ or
+ 
+ /var/compaq(or hp)/survey
+survey-yyyy-mm-dd-hh-MM-ss.txt
+ 
+▼ADU (Array Diagnostics Utility) CLI or GUI
+＜Method of acquiring Array Diagnosis Utility report (ADU report) (CLI)＞
+(1) Start method: #hpaducli -start
+(2) Method of generating report: #Hpaducli -f-file name. txt -r
+(3) How to stop: #hpaducli -stop
+ 
+＜Method of acquiring Array Diagnosis Utility report (ADU report) (GUI)＞
+(1) Start method: #hpaducli -start
+(2) Login to the System Management Homepage (For https://127.0.0.1:2381 > local) by starting a browser.  
+(3) Array Diagnostics Utility that exists in a left pane starts.  
+(4) The report is automatically generated. Please push "Preservation of the report" after that process.
+(5) To stop the Array Diagnosis Utility: #hpaducli –stop
+ 
+▼Integrated Management Log (IML)
+# hplog -v > "file name".txt
